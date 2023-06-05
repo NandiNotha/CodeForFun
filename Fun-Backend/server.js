@@ -7,9 +7,9 @@ const app = express();
 const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
-  database: 'api',
-  password: '5433',
-  port: 5433,
+  database: 'CodeForFun',
+  password: 'Letsdoit!',
+  port: 5432,
 });
 
 // Test the connection
@@ -22,6 +22,20 @@ pool.connect((err, client, done) => {
 });
 
 // Define your routes and other server configurations here
+app.get('/users/:id', (req, res) => {
+  const userId = req.params.id;
+
+  User.getById(userId, pool)
+    .then(result => {
+      res.json(result.rows);
+    })
+    .catch(err => {
+      console.error('Error fetching user:', err);
+      res.status(500).json({ error: 'An error occurred while fetching user' });
+    });
+});
+
+require('./routes/user.route')(app)
 // ...
 
 // Start the server
