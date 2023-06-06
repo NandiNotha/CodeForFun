@@ -1,44 +1,26 @@
-const express = require('express');
-const { Pool } = require('pg');
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
+const db = require('./queries')
+const port = 3000
 
-const app = express();
+app.use(bodyParser.json())
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+)
 
-// Create a new pool instance
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'CodeForFun',
-  password: 'Letsdoit!',
-  port: 5432,
-});
+app.get('/', (request, response) => {
+  response.json({ info: 'Node.js, Express, and Postgres API' })
+})
 
-// Test the connection
-pool.connect((err, client, done) => {
-  if (err) {
-    console.error('Error connecting to the database:', err);
-  } else {
-    console.log('Connected to the database');
-  }
-});
+app.get('/users', db.getUsers)
+app.get('/users/:id', db.getUserById)
+app.post('/users', db.createUser)
+app.put('/users/:id', db.updateUser)
+app.delete('/users/:id', db.deleteUser)
 
-// Define your routes and other server configurations here
-app.get('/users/:id', (req, res) => {
-  const userId = req.params.id;
-
-  User.getById(userId, pool)
-    .then(result => {
-      res.json(result.rows);
-    })
-    .catch(err => {
-      console.error('Error fetching user:', err);
-      res.status(500).json({ error: 'An error occurred while fetching user' });
-    });
-});
-
-require('./routes/user.route')(app)
-// ...
-
-// Start the server
-app.listen(3000, () => {
-  console.log('Server started on port 3000');
-});
+app.listen(port, () => {
+  console.log(`App running on port ${port}.`)
+})
