@@ -1,1 +1,22 @@
+.image{
+//    max-width:100%; /*width of your image*/
+//    height:100px; /*height of your image*/
+   margin:0; 
+   padding:0; 
+   justify-content: center;
+   align-items: center;
+   object-fit: cover;
    
+   p{
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    font-style: Papyrus;
+    transform: translate(-50%, -50%);
+    font-family:fantasy;
+    font-size: larger;
+    font-weight: bolder;
+    color:rgba(248, 248, 255, 0.546);
+    
+   }
+}

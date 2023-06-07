@@ -1,1 +1,18 @@
- 
+ <div class = "image">
+    <img src = "https://images.unsplash.com/photo-1599447332412-6bc6830c815a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8eW9nYSUyMHBvc2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80" width="100%" height="800px">
+    <p>- MAKE YOURSELF BETTER</p>
+ </div>
+
+ <div class="row" >
+    <div class="col-md-3" *ngFor="let pose of poses">
+        <div class="card mb-5 margin-top: 30px;" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+                <span>{{pose.name}}</span>
+                <span>{{pose.descrption}}</span>
+                <span>{{pose.difficulty}}</span><br>
+                <button class="btn btn-primary" type="button" (click)="onBook(pose.poses_id)">View</button>
+            </div>
+          </div>
+    </div>
+</div>
