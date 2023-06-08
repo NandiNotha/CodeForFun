@@ -61,20 +61,27 @@
 //   }
 // }
 
-.centered h1{
-  position: absolute;
-  top: 28%;
-  left: 30%;
+.centered{
+  h1{
+    font-size: xx-large;
+    font-style: italic;
+    color: rgba(95, 158, 160, 0.81);
+    // margin-left: 100px;
+  }
   transform: translate(-50%, -50%);
-  font-size: xx-large;
-  font-style: italic;
- 
-}
+  position:absolute;
+  top: 28%;
+  margin-left: 100px;
+  left: 28%;
+  justify-items: auto;
 
-.centered .logo {
-  // background: url("https://i0.wp.com/blissyoga.be/wp-content/uploads/2021/01/cropped-logo_horizontal2-klein.jpg?fit=514%2C298&ssl=1");
-  padding: 0px;
-  margin: 0px;
-  width: 150px;
-  height: 50px;
-}
+// .centered .logo {
+//   position: absolute;
+//   top: 28%;
+//   left: 30%;
+//   transform: translate(-50%, -50%);
+//   font-size: xx-large;
+//   font-style: italic;
+ 
+ 
+ }

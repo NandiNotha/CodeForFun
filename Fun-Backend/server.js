@@ -3,6 +3,11 @@ const bodyParser = require('body-parser')
 const app = express()
 const db = require('./queries')
 const port = 3033
+const cors = require("cors")
+
+var corsOptions = {
+  origin: "http://localhost:4200"
+}
 
 app.use(bodyParser.json())
 app.use(
@@ -11,22 +16,24 @@ app.use(
   })
 )
 
+app.use(cors(corsOptions))
+
 app.get('/', (request, response) => {
   response.json({ info: 'Node.js, Express, and Postgres API' })
 })
 //Route for Users
-app.get('/users', db.getUsers)
-app.get('/users/:id', db.getUserById)
-app.post('/users', db.createUser)
-app.put('/users/:id', db.updateUser)
-app.delete('/users/:id', db.deleteUser)
+app.get('/api/users', db.getUsers)
+app.get('/api/users/:id', db.getUserById)
+app.post('/api/users', db.createUser)
+app.put('/api/users/:id', db.updateUser)
+app.delete('/api/users/:id', db.deleteUser)
 
 //Route for Poses
-app.get('/poses', db.getPoses)
-app.get('/poses/:id', db.getPosesById)
-app.post('/poses', db.createPoses)
-app.put('/poses/:id', db.updatePoses)
-app.delete('/poses/:id', db.deletePoses)
+app.get('/api/poses', db.getPoses)
+app.get('/api/poses/:id', db.getPosesById)
+app.post('/api/poses', db.createPoses)
+app.put('/api/poses/:id', db.updatePoses)
+app.delete('/api/poses/:id', db.deletePoses)
 
 app.listen(port, () => {
   console.log(`App running on port ${port}.`)
