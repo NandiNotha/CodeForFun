@@ -9,14 +9,19 @@
     max-width: 600px;
     margin: auto;
     padding: 50px;
-    margin-top: 8%;
+    margin-top: 12%;
     border-radius: 10px;
-    background:rgba(18, 18, 18, 0.434);
+    background:rgba(18, 18, 18, 0.505);
     // box-shadow: 5px 5px 0 5px rgba(121, 133, 127, 0.3);
     position: relative;
     top: 40px;
     background-size: cover;
    
+  }
+
+  label{
+    font-size: 20px;
+    color: azure;
   }
   
   .bg-img {
@@ -38,7 +43,8 @@
   }
   .achor{
     color: rgb(6, 168, 255);
-  }.achor:hover{
+  }
+  .achor:hover{
     text-decoration: underline;
   }
   
@@ -46,8 +52,10 @@
     text-align: center;
     margin-bottom: 20px;
     font-size: x-large;
-    font-weight: 600;
+    font-weight: 800;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(200, 199, 199);
+    font-size: 36px;
   }
   
   input[type="text"],
@@ -58,10 +66,11 @@
     padding: 10px;
     border: none;
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.419);
-    font-size: 16px;
-    background-color:lightgray;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.292);
+    font-size: 20px;
+    background-color:rgba(211, 211, 211, 0.018);
     line-height: 5px;
+    color: azure;
   }
   
   [type="submit"] {
@@ -77,6 +86,12 @@
     margin: auto;
     align-content: center;
     margin-top: 10px;
+    a{
+        text-decoration: none;
+        color: black;
+        font-size: x-large;
+        font: bolder;
+    }
     
   }
   
@@ -90,6 +105,7 @@
   
   }
   .error {
-    color: red;
+    color: rgba(255, 0, 0, 0.592);
     margin-top: 0.5rem;
+    font-size: large;
   }

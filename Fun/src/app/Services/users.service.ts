@@ -27,6 +27,6 @@ export class UsersService {
   }
 
   signIn(userLogin: UserLogin) {
-    return this.http.post<any>(`${this.url}/api/sign`, userLogin, this.options);
+    return this.http.post<any>(`${this.url}/api/users`, userLogin, this.options);
   }
 }

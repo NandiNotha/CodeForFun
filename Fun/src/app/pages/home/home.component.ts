@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { PosesService } from 'src/app/Services/poses.service';
+import { Poses } from '../../poses'
 
 
 @Component({

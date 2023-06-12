@@ -6,13 +6,15 @@
  <div class="row" >
     <div class="col-md-3" *ngFor="let pose of poses">
         <div class="card mb-5 margin-top: 30px;" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
+            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
             <div class="card-body">
-                <span>{{pose.name}}</span>
-                <span>{{pose.descrption}}</span>
+                <span>{{pose.name}}</span><br>
+                <img [src] = "pose.image_url" width="100%" height="45%"><br>
+                <span>{{pose.description}}</span><br>
                 <span>{{pose.difficulty}}</span><br>
-                <button class="btn btn-primary" type="button" (click)="onBook(pose.poses_id)">View</button>
+                <!-- <button class="btn btn-primary" type="button" (click)="onBook(pose.poses_id)">View</button> -->
             </div>
+            
           </div>
     </div>
 </div>
