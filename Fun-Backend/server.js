@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const dotenv = require('dotenv');
 const app = express()
 const db = require('./queries')
 const port = 3033

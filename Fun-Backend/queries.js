@@ -7,6 +7,23 @@ const pool = new Pool({
   port: 5432,
 })
 
+// app.post('/register', (req, res) => {
+//   const { firstName, lastName, email, password } = req.body;
+//   // Insert the form data into the PostgreSQL database
+//   pool.query(
+//     'INSERT INTO users (first_name, last_name, email, password) VALUES ($1, $2, $3, $4)',
+//     [firstName, lastName, email, password],
+//     (error, results) => {
+//       if (error) {
+//         console.error('Error inserting data:', error);
+//         res.status(500).json({ message: 'Error inserting data' });
+//       } else {
+//         console.log('Data inserted successfully');
+//         res.status(200).json({ message: 'Data inserted successfully' });
+//       }
+//     }
+//   );
+// });
 
 const getUsers = (request, response) => {
   pool.query('SELECT * FROM users ORDER BY id ASC', (error, results) => {
@@ -29,9 +46,9 @@ const getUserById = (request, response) => {
 }
 
 const createUser = (request, response) => {
-  const { username, email, password } = request.body
+  const { firstName, lastName, email, password } = request.body
 
-  pool.query('INSERT INTO users (username, email, password) VALUES ($1, $2, $3)', [username, email, password], (error, results) => {
+  pool.query('INSERT INTO users (firstname, laststname, email, password) VALUES ($1, $2, $3, $4)', [firstName, lastName, email, password], (error, results) => {
     if (error) {
       throw error
     }
@@ -41,11 +58,11 @@ const createUser = (request, response) => {
 
 const updateUser = (request, response) => {
   const id = parseInt(request.params.id)
-  const { username, email, password } = request.body
+  const { firstName, lastName, email, password } = request.body
 
   pool.query(
-    'UPDATE users SET username = $1, email = $2, password = $3 WHERE id = $4',
-    [username, email, password, id],
+    'UPDATE users SET firstName = $1, lastName =$2 ,email = $3, password = $4 WHERE id = $5',
+    [firstName, lastName, email, password, id],
     (error, results) => {
       if (error) {
         throw error
