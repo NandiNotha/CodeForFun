@@ -1,0 +1,112 @@
+
+.container{
+    // margin-bottom: 15em;
+    height: 100vh;
+    background-color: white;
+  }
+  
+  form {
+    max-width: 600px;
+    margin: auto;
+    padding: 50px;
+    margin-top: 10%;
+    border-radius: 10px;
+    background:rgba(18, 18, 18, 0.505);
+    // box-shadow: 5px 5px 0 5px rgba(121, 133, 127, 0.3);
+    position: relative;
+    top: 40px;
+    background-size: cover;
+   
+  }
+
+  label{
+    font-size: 20px;
+    color: azure;
+  }
+  
+  .bg-img {
+    /* The image used */
+    background-image: url("https://yogapractice.com/wp-content/uploads/2019/03/10-Ways-Yoga-Will-Change-You.png");
+  
+    /* Control the height of the image */
+    height: 110vh;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 50px;
+    
+    
+  }
+  .alert{
+    margin-top: 5px;
+  }
+  .achor{
+    color: rgb(6, 168, 255);
+  }
+  .achor:hover{
+    text-decoration: underline;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: x-large;
+    font-weight: 800;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(200, 199, 199);
+    font-size: 36px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.292);
+    font-size: 20px;
+    background-color:rgba(211, 211, 211, 0.018);
+    line-height: 5px;
+    color: azure;
+  }
+  
+  [type="submit"] {
+    background: rgb(70, 147, 148);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+    width: 100%;
+    margin: auto;
+    align-content: center;
+    margin-top: 10px;
+    a{
+        text-decoration: none;
+        color: white;
+        font-size: x-large;
+        font: bolder;
+    }
+    
+  }
+  
+  
+  
+  input[type="submit"]:hover {
+    background-color: rgba(255, 252, 252, 0.951);
+    // background: #3e8e41;
+    border: none;
+    outline: none;
+  
+  }
+  .error {
+    color: rgba(255, 0, 0, 0.592);
+    margin-top: 0.5rem;
+    font-size: large;
+  }

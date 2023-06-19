@@ -19,6 +19,14 @@ app.use(
 
 app.use(cors(corsOptions))
 
+
+// app.post(`${rootUrl}/user, (req, res) => {
+//   const reqUser = req.body.user;
+//   user = [];
+//   user.push(reqUser);
+//   res.json(user);
+// });
+
 app.get('/', (request, response) => {
   response.json({ info: 'Node.js, Express, and Postgres API' })
 })
